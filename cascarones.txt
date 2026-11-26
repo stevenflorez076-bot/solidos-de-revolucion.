@@ -1,0 +1,15 @@
+f(x)=x^2*(2-x)
+region=Integral(f,0,2)
+a=Slider(0.01,2*pi,0.01)
+a=2*pi
+p=Slider(0.01,2,0.01)
+p=1
+n=Slider(1,500,1)
+n=10
+s_1=Surface(u*cos(v),u^2*(2-u),u*sin(v),u,0,2,v,0,a)
+s_2=Surface(u*cos(v),0,u*sin(v),u,0,2,v,0,a)
+seccion=Surface(p*cos(v),u,p*sin(v),u,0,f(p),v,0,2*pi)
+h(x)=2*pi*x*f(x)
+vol=Integral(h,0,2)
+aprox=RectangleSum(h,0,2,n,0.5)
+error=abs(vol-aprox)

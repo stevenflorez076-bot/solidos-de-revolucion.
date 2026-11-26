@@ -1,0 +1,15 @@
+f(x)=x^2
+region=Integral(f,0,2)
+a=Slider(0.01,2*pi,0.01)
+a=2*pi
+p=Slider(0.01,2,0.01)
+p=1
+n=Slider(1,500,1)
+n=10
+s_1=Surface(u,u^2*cos(v),u^2*sin(v),u,0,2,v,0,a)
+s_2=Surface(2,u*cos(v),u*sin(v),u,0,4,v,0,a)
+seccion=Surface(p,u*cos(v),u*sin(v),u,0,p^2,v,0,2*pi)
+h(x)=pi*f(x)^2
+vol=Integral(h,0,2)
+aprox=RectangleSum(h,0,2,n,0.5)
+error=abs(vol-aprox)
